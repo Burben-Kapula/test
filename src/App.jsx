@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import personService from './services/phonebook';
+import personService from './services/notes';
 import './App.css'; // додай для стилів
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
     useEffect(() => {
         personService.getAll().then(initialPersons => setPersons(initialPersons));
     }, []);
+
 
     const addPerson = (event) => {
         event.preventDefault();
