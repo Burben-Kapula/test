@@ -33,10 +33,7 @@ function App() {
                         setHighlightedId(updatedPerson.id);
                         setTimeout(() => setHighlightedId(null), 1500);
                     })
-                    .catch(error => {
-                        alert(`Information of ${existingPerson.name} has already been removed from server`);
-                        setPersons(persons.filter(p => p.id !== existingPerson.id));
-                    });
+
             }
             return;
         }
