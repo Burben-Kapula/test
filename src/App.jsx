@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import personService from './services/notes';
+import personService from './models/note';
 import './App.css'; // додай для стилів
 
 function App() {
