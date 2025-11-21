@@ -71,9 +71,7 @@ function App() {
             personService
                 .remove(id)
                 .then(() => {
-                    setPersons(persons.filter(
-                        person => person.id !== id && person._id !== id
-                    ));
+                    setPersons(persons.filter(person => person._id !== id));
                 })
                 .catch(() => {
                     alert('Failed to delete contact!');
@@ -112,7 +110,6 @@ function App() {
                         {person.name} — {person.number}
                         <button onClick={() => deletePerson(person._id, person.name)}>delete</button>
                     </li>
-
                 ))}
             </ul>
         </div>
