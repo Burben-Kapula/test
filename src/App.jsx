@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import personService from './models/note';
+import personService from './servise/persons';
 import './App.css';
 
 function App() {
