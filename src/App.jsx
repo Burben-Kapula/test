@@ -71,7 +71,9 @@ function App() {
             personService
                 .remove(id)
                 .then(() => {
-                    setPersons(persons.filter(person => person._id !== id));
+                    setPersons(persons.filter(
+                        person => person.id !== id && person._id !== id
+                    ));
                 })
                 .catch(() => {
                     alert('Failed to delete contact!');
@@ -104,11 +106,11 @@ function App() {
             <ul>
                 {personsToShow.map(person => (
                     <li
-                        key={person._id}
-                        className={person._id === highlightedId ? 'highlight' : ''}
+                        key={person.id || person._id}
+                        className={person.id === highlightedId ? 'highlight' : ''}
                     >
                         {person.name} — {person.number}
-                        <button onClick={() => deletePerson(person._id, person.name)}>delete</button>
+                        <button onClick={() => deletePerson(person.id || person._id, person.name)}>delete</button>
                     </li>
                 ))}
             </ul>
